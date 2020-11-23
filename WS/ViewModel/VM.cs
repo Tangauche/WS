@@ -18,7 +18,11 @@ namespace WS.ViewModel
                 l += 1;
             }
 
-            if (l > 8)
+            if (l == 0)
+            {
+                throw new ArgumentNullException(paramName : nameof(readWord),message: "Veuillez rentrer un quelque chose");
+            }
+            else if (l > 8)
             {
                 throw new ArgumentException(paramName: nameof(readWord), message: "Seulement 8 charactères ou moins");
             }
